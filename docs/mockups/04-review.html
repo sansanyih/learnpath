@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学径 · 复习队列</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app-shell shell-with-aside">
+
+  <!-- rail -->
+  <aside class="rail">
+    <a class="rail-logo" href="01-landing.html" title="学径">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-2 1.5-3.5 4-4l6-1.5c2.5-.6 4-2 4-4"/><circle cx="5" cy="19" r="1.6"/><circle cx="19" cy="6" r="1.6"/></svg>
+    </a>
+    <button class="rail-btn" title="学习计划">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
+    </button>
+    <button class="rail-btn is-active" title="复习队列">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></svg>
+    </button>
+    <button class="rail-btn" title="学习数据">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+    </button>
+    <button class="rail-btn" title="代码走读">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"/></svg>
+    </button>
+    <span class="rail-spacer"></span>
+    <button class="rail-btn" title="设置">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 0 0-1.7-1L14.5 3h-5l-.4 2.1a7 7 0 0 0-1.7 1l-2.3-1-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 1.7 1l.4 2.1h5l.4-2.1a7 7 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5c.1-.3.1-.7.1-1z"/></svg>
+    </button>
+    <span style="width:30px;height:30px;border-radius:50%;background:var(--paper-3);display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--ink-2);margin-top:4px">SY</span>
+  </aside>
+
+  <!-- sidebar -->
+  <aside class="sidebar">
+    <div>
+      <div class="side-kicker">
+        <span class="eyebrow">复习队列</span>
+        <button class="icon-btn" title="设置">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 0 0-1.7-1L14.5 3h-5l-.4 2.1a7 7 0 0 0-1.7 1l-2.3-1-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 1.7 1l.4 2.1h5l.4-2.1a7 7 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5c.1-.3.1-.7.1-1z"/></svg>
+        </button>
+      </div>
+      <div class="side-title" style="margin-top:8px">今天到期 2 项</div>
+      <div class="side-meta"><span class="chip is-amber">约 6 分钟</span><span class="chip">间隔重复</span></div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-section-head"><span>今天</span><span>2</span></div>
+      <div style="display:grid;gap:6px">
+        <div style="padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:12.5px;line-height:1.5">
+          <span style="display:block;color:var(--ink)">get_db 的 yield 时机</span>
+          <span class="muted tiny">上次 68 · 间隔 3 天</span>
+        </div>
+        <div style="padding:9px 10px;border-radius:8px;font-size:12.5px;line-height:1.5">
+          <span style="display:block;color:var(--ink-2)">连接池耗尽时的行为</span>
+          <span class="muted tiny">上次 55 · 间隔 1 天</span>
+        </div>
+      </div>
+    </div>
+    <div class="side-section">
+      <div class="side-section-head"><span>本周稍后</span><span>5</span></div>
+      <div class="tree">
+        <div class="tree-item"><span class="tree-seq">明</span><span>事务边界与 rollback</span><span class="tiny muted">1</span></div>
+        <div class="tree-item"><span class="tree-seq">明</span><span>Pydantic 字段校验顺序</span><span class="tiny muted">1</span></div>
+        <div class="tree-item"><span class="tree-seq">后</span><span>路由匹配优先级</span><span class="tiny muted">3</span></div>
+      </div>
+    </div>
+    <span class="rail-spacer" style="flex:none"></span>
+    <div class="inset" style="padding:12px;font-size:12px;color:var(--muted);line-height:1.65">
+      答对后间隔按 1 → 3 → 7 → 15 → 30 天拉长；连续两次答错会回到学习队列，并触发计划加练。
+    </div>
+  </aside>
+
+  <!-- main -->
+  <main class="main">
+    <div class="topbar">
+      <div class="crumbs">
+        <span>复习</span>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        <b>今天 · 2 项</b>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-sm btn-ghost">全部跳过</button>
+        <button class="btn btn-sm btn-primary">开始复习</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px">TODAY · 2026-03-21</div>
+          <h1 class="page-title">先回忆，再决定下次什么时候复习</h1>
+          <p class="lead" style="margin-top:10px;max-width:34em">这两题按掌握度衰减排到了今天。答对会拉长间隔；答错不扣分，只会在计划里插入一次加练。</p>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:12px">
+
+        <article class="card due-item">
+          <div class="due-head">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span class="chip is-amber">间隔 3 天</span>
+              <span class="chip">异步数据库 · 第 2 节</span>
+            </div>
+            <div class="spark">
+              <i style="height:5px"></i><i style="height:8px" class="on"></i><i style="height:6px"></i><i style="height:10px" class="on"></i><i style="height:7px"></i><i style="height:11px" class="on"></i><i style="height:9px"></i>
+            </div>
+          </div>
+          <h3 class="due-title">为什么 <code>get_db</code> 要用 <code>yield</code>，而不是 <code>return</code>？</h3>
+          <div class="due-meta">
+            <span>上次得分 <b style="color:var(--amber)">68</b></span>
+            <span>·</span>
+            <span>答对后间隔 7 天</span>
+            <span>·</span>
+            <span>预计 3 分钟</span>
+          </div>
+          <div class="due-actions">
+            <button class="btn btn-sm btn-primary">开始回答</button>
+            <button class="btn btn-sm">跳过这次</button>
+            <button class="btn btn-sm btn-ghost">回到章节</button>
+          </div>
+        </article>
+
+        <article class="card due-item">
+          <div class="due-head">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span class="chip is-rose">间隔 1 天 · 刚答错</span>
+              <span class="chip">异步数据库 · 第 4 节</span>
+            </div>
+            <div class="spark">
+              <i style="height:9px"></i><i style="height:5px"></i><i style="height:6px" class="on"></i><i style="height:4px"></i><i style="height:7px" class="on"></i><i style="height:5px"></i><i style="height:8px"></i>
+            </div>
+          </div>
+          <h3 class="due-title">连接池被占满时，新请求是阻塞排队，还是直接报错？</h3>
+          <div class="due-meta">
+            <span>上次得分 <b style="color:var(--rose)">55</b></span>
+            <span>·</span>
+            <span>已加入「加练」队列</span>
+            <span>·</span>
+            <span>预计 2 分钟</span>
+          </div>
+          <div class="due-actions">
+            <button class="btn btn-sm btn-primary">开始回答</button>
+            <button class="btn btn-sm">先看 30 秒回顾</button>
+            <button class="btn btn-sm btn-ghost">调整排期</button>
+          </div>
+        </article>
+
+        <div class="empty" style="margin-top:6px">
+          明天还有 2 项 · 后天 3 项 · 队列不会堆积到周末
+        </div>
+      </div>
+
+      <h2 class="display h2" style="margin:34px 0 16px">本周完成度</h2>
+      <div class="card" style="padding:6px 18px">
+        <div class="mastery-row wide"><span>阶段 01 · 环境与路由</span><div class="progress is-green"><i style="width:100%"></i></div><b>100%</b></div>
+        <div class="mastery-row wide"><span>阶段 02 · 校验与响应</span><div class="progress is-green"><i style="width:100%"></i></div><b>100%</b></div>
+        <div class="mastery-row wide"><span>阶段 03 · 异步与事务</span><div class="progress"><i style="width:43%"></i></div><b>43%</b></div>
+        <div class="mastery-row wide"><span>阶段 04 · 鉴权与依赖</span><div class="progress is-amber"><i style="width:6%"></i></div><b>6%</b></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- aside -->
+  <aside class="aside">
+    <section class="card widget">
+      <div class="widget-head"><h4>连续学习</h4><span class="chip is-green">12 天</span></div>
+      <div class="heat" aria-hidden="true">
+        <span class="l1"></span><span class="l2"></span><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l4"></span><span class="l3"></span><span class="l1"></span>
+        <span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l3"></span><span class="l2"></span><span class="l4"></span><span class="l2"></span><span class="l1"></span><span class="l2"></span>
+        <span class="l2"></span><span class="l1"></span><span class="l3"></span><span class="l4"></span><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l4"></span>
+        <span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span><span class="l2"></span><span class="l1"></span>
+      </div>
+      <div class="legend"><span class="sw" style="background:#e7ebf7"></span>少<span class="sw" style="background:#c9d3f0"></span><span class="sw" style="background:#91a5e4"></span><span class="sw" style="background:var(--blue)"></span>多</div>
+    </section>
+
+    <section class="card widget">
+      <div class="widget-head"><h4>本周投入</h4><span class="widget-note">8h 目标</span></div>
+      <div class="bars">
+        <div><i style="height:38%"></i><span>一</span></div>
+        <div><i style="height:64%"></i><span>二</span></div>
+        <div><i style="height:20%"></i><span>三</span></div>
+        <div class="now"><i style="height:86%"></i><span>四</span></div>
+        <div><i style="height:12%"></i><span>五</span></div>
+        <div><i style="height:8%"></i><span>六</span></div>
+        <div><i style="height:6%"></i><span>日</span></div>
+      </div>
+      <div class="rule" style="margin:12px 0 8px"></div>
+      <div class="widget-note">3.6h / 8h · 按这个节奏周五前能完成本周目标。</div>
+    </section>
+
+    <section class="inset" style="padding:14px">
+      <div class="eyebrow" style="margin-bottom:6px">复习策略</div>
+      <div style="font-size:12.5px;color:var(--ink-2);line-height:1.75">
+        间隔序列 1 / 3 / 7 / 15 / 30 天；连续答对 3 次的知识点进入「已掌握」，不再高频出现。
+      </div>
+    </section>
+  </aside>
+</div>
+</body>
+</html>

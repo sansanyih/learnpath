@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学径 · 章节阅读</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app-shell shell-with-aside">
+
+  <!-- rail -->
+  <aside class="rail">
+    <a class="rail-logo" href="01-landing.html" title="学径">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-2 1.5-3.5 4-4l6-1.5c2.5-.6 4-2 4-4"/><circle cx="5" cy="19" r="1.6"/><circle cx="19" cy="6" r="1.6"/></svg>
+    </a>
+    <button class="rail-btn" title="学习计划">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
+    </button>
+    <button class="rail-btn is-active" title="代码走读">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"/></svg>
+    </button>
+    <button class="rail-btn" title="复习队列">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></svg>
+    </button>
+    <button class="rail-btn" title="学习数据">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+    </button>
+    <span class="rail-spacer"></span>
+    <button class="rail-btn" title="设置">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 0 0-1.7-1L14.5 3h-5l-.4 2.1a7 7 0 0 0-1.7 1l-2.3-1-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 1.7 1l.4 2.1h5l.4-2.1a7 7 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5c.1-.3.1-.7.1-1z"/></svg>
+    </button>
+    <span style="width:30px;height:30px;border-radius:50%;background:var(--paper-3);display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--ink-2);margin-top:4px">SY</span>
+  </aside>
+
+  <!-- sidebar -->
+  <aside class="sidebar">
+    <div>
+      <div class="side-kicker">
+        <span class="eyebrow">阶段 03 · 异步数据库</span>
+        <button class="icon-btn" title="折叠">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+      </div>
+      <div class="side-title" style="margin-top:8px">异步数据库与事务</div>
+      <div class="side-meta">
+        <span class="chip">7 个任务</span>
+        <span class="chip is-blue">3 / 7 完成</span>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-section-head"><span>章节</span><span>已读 2/5</span></div>
+      <div class="tree">
+        <div class="tree-item is-done"><span class="tree-seq">01</span><span>异步引擎与会话</span><span class="tiny muted">✓</span></div>
+        <div class="tree-item is-done"><span class="tree-seq">02</span><span>get_db 的生命周期</span><span class="tiny muted">✓</span></div>
+        <div class="tree-item is-active"><span class="tree-seq">03</span><span>事务与回滚</span><span class="tiny muted">38%</span></div>
+        <div class="tree-item"><span class="tree-seq">04</span><span>连接池与并发</span></div>
+        <div class="tree-item"><span class="tree-seq">05</span><span>章节测验 · 8 题</span></div>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-section-head"><span>关联仓库</span><span>只读</span></div>
+      <div class="inset" style="padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 0-5-8 0-8 0-4 6-4 6 0 5 0 5 8 0 8H9z"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><path d="M6 8v3M18 8v3"/></svg>
+          tiangolo/fastapi
+        </div>
+        <div class="mono" style="color:var(--muted);margin-top:6px">main @ 8f3a2c1 · 3.4k 文件</div>
+        <div class="mono" style="color:var(--muted);margin-top:2px">已切分为 9 个学习章节</div>
+      </div>
+    </div>
+
+    <span class="rail-spacer" style="flex:none"></span>
+    <div class="inset" style="padding:12px;font-size:12px;color:var(--muted);line-height:1.65">
+      阅读时选中文字可高亮或写批注；批注与问题会自动归档到本章。
+    </div>
+  </aside>
+
+  <!-- main -->
+  <main class="main">
+    <div class="topbar">
+      <div class="crumbs">
+        <span>学习计划</span>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        <span>异步数据库</span>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        <b>事务与回滚</b>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn" title="专注模式">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        </button>
+        <button class="icon-btn" title="批注" style="position:relative">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          <span style="position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;border-radius:999px;background:var(--amber);border:2px solid var(--paper);color:#fff;font-size:9.5px;display:grid;place-items:center;font-family:var(--font-mono)">2</span>
+        </button>
+        <button class="btn btn-sm btn-ghost">上一节</button>
+        <button class="btn btn-sm">下一节</button>
+      </div>
+    </div>
+
+    <div class="guest-bar">
+      <span class="dot"></span>
+      游客模式 · 阅读记录与批注不会保存
+      <a href="05-login.html">登录后保存进度</a>
+    </div>
+
+    <div class="reader-progress"><i></i></div>
+
+    <div class="section-tabs">
+      <div class="section-tab"><span class="n">01</span>概念</div>
+      <div class="section-tab"><span class="n">02</span>拆解</div>
+      <div class="section-tab is-active"><span class="n">03</span>代码</div>
+      <div class="section-tab"><span class="n">04</span>测验</div>
+      <div class="section-tab"><span class="n">05</span>复习</div>
+      <span class="grow"></span>
+      <div class="section-tab" style="border:0"><span class="mono" style="font-size:10px">38%</span></div>
+    </div>
+
+    <div class="content">
+      <article class="article">
+        <div class="eyebrow">CHAPTER 03 · 异步数据库与事务</div>
+        <h1>事务与回滚：<code>async with</code> 到底包住了什么？</h1>
+        <div class="article-meta">
+          <span>12 分钟</span><span class="dot"></span>
+          <span>2 个知识点</span><span class="dot"></span>
+          <span>来自 tiangolo/fastapi</span><span class="dot"></span>
+          <span class="mono" style="font-size:11.5px">fastapi/dependencies/utils.py</span>
+        </div>
+
+        <div class="article-body">
+          <div class="callout">
+            <div class="eyebrow">先看结论</div>
+            <b>Session</b> 负责“一次会话内的工作单元”，<b>事务</b>负责“要么全成功、要么全失败”。<code>async with</code> 退出时，没有异常就 <code>commit</code>，有异常就 <code>rollback</code>，最后把连接还给池子——三件事的顺序不能换。
+          </div>
+
+          <p>把 <code>Depends(get_db)</code> 展开看，一个请求的生命周期其实是四个动作：取连接 → 开事务 → 执行 → 提交或回滚。很多“数据莫名没写进去”的问题，都是这四个动作里有一环被提前打断了。</p>
+
+          <h2>一个请求里的四步</h2>
+
+          <div class="code-block">
+            <div class="code-head">
+              <span class="file">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/></svg>
+                app/db.py
+              </span>
+              <span>Python · 18 行</span>
+            </div>
+<pre class="code"><span class="ln">1</span><span class="k">async def</span> <span class="f">get_db</span>() -&gt; AsyncIterator[AsyncSession]:
+<span class="ln">2</span><span class="hl">    <span class="k">async with</span> SessionLocal() <span class="k">as</span> session: <span class="c"># 取连接 + 开事务</span></span>
+<span class="ln">3</span>        <span class="k">try</span>:
+<span class="ln">4</span>            <span class="k">yield</span> session               <span class="c"># 交给路由</span>
+<span class="ln">5</span>            <span class="k">await</span> session.commit()      <span class="c"># 没异常才提交</span>
+<span class="ln">6</span>        <span class="k">except</span> Exception:
+<span class="ln">7</span>            <span class="k">await</span> session.rollback()
+<span class="ln">8</span>            <span class="k">raise</span>
+<span class="ln">9</span>
+<span class="ln">10</span><span class="k">@app.post</span>(<span class="s">"/tasks"</span>)
+<span class="ln">11</span><span class="k">async def</span> <span class="f">create_task</span>(body: TaskIn, db=Depends(get_db)):
+<span class="ln">12</span>    db.add(Task(**body.model_dump()))
+<span class="ln">13</span>    <span class="k">await</span> db.flush()                <span class="c"># 拿 id，不提交</span>
+<span class="ln">14</span>    <span class="k">return</span> {<span class="s">"id"</span>: task.id}</pre>
+          </div>
+
+          <p>注意第 13 行的 <code>flush</code> 和第 5 行的 <code>commit</code> 不是一回事：flush 只是把 SQL 发给数据库、拿到主键，事务仍然开着；真正落盘要等依赖退出时 commit。这也解释了为什么在路由里再写一次 <code>await db.commit()</code> 容易出问题——提交了第一次，后面的 rollback 就救不回来。</p>
+
+          <div class="callout is-amber">
+            <div class="eyebrow">常见坑</div>
+            <p style="margin:0 0 6px">1. 路由里手动 commit 之后抛异常，依赖层的 rollback 已经无事可做，前半段写入变成“部分成功”。</p>
+            <p style="margin:0">2. 在 <code>yield</code> 之后再取 <code>request.state</code> 这类请求级对象，可能已经被回收；清理逻辑要放在 <code>yield</code> 前拿好引用。</p>
+          </div>
+
+          <h2>回到仓库</h2>
+          <p>这套写法在 FastAPI 自己的测试依赖里也能看到影子。建议对比阅读下面三个文件，重点看依赖是怎么被 <code>solve_dependencies</code> 展开的：</p>
+          <div class="repo-chips">
+            <span class="repo-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/></svg>fastapi/dependencies/utils.py</span>
+            <span class="repo-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/></svg>fastapi/routing.py</span>
+            <span class="repo-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/></svg>docs_src/dependencies</span>
+          </div>
+
+          <p style="margin-top:22px">读完这一节，你应该能不看文档回答：<span class="hl-mark">为什么 get_db 用 yield 而不是 return</span>。如果答不出来，先别做测验，回到第 2 节把生成器依赖的生命周期再走一遍。</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- aside: AI assistant -->
+  <aside class="aside">
+    <div class="panel-tabs">
+      <div class="panel-tab is-active">AI 助手</div>
+      <div class="panel-tab">批注 <span class="count">2</span></div>
+    </div>
+
+    <div class="ai-thread">
+      <div class="ai-card">
+        <div class="who">YOU · 3 分钟前</div>
+        这个 <code>yield</code> 和 <code>return</code> 有什么区别？为什么清理要放在 yield 之后？
+      </div>
+      <div class="ai-card">
+        <div class="who">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>
+          学径 AI · 已带本章上下文
+        </div>
+        return 会立刻结束函数，session 在路由执行前就被关掉；yield 把它变成生成器：路由拿到会话，依赖函数停在这一行，等请求结束后再继续执行 commit / rollback，然后才真正退出<span class="cursor"></span>
+      </div>
+    </div>
+
+    <div class="ai-chips">
+      <span class="chip">举个反例</span>
+      <span class="chip">对比 return 写法</span>
+      <span class="chip">用这道题考我</span>
+    </div>
+
+    <div class="ai-ask">
+      <input placeholder="追问本节任意概念…" />
+      <button class="btn btn-sm btn-primary" style="height:38px;padding:0 12px">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
+    </div>
+
+    <div class="rule"></div>
+    <div class="widget-note" style="line-height:1.7">对话与批注都归到本章，下次打开自动恢复；选中正文可写批注。</div>
+  </aside>
+</div>
+
+<!-- status bar -->
+<div class="read-status">
+  <button>未开始</button>
+  <button class="is-on">学习中</button>
+  <span class="sep"></span>
+  <button>需复习</button>
+  <button>已掌握</button>
+  <span class="sep"></span>
+  <button>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>
+    安排复习
+  </button>
+</div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* ============================================================
+   Motion layer: quiet, transform/opacity only.
+   Respects prefers-reduced-motion.
+   ============================================================ */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 18px));
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hero: headline mask reveal (kept on the h1 itself for simplicity) */
+
+/* hero headline: mask reveal per line */
+.hero h1.reveal {
+  transform: none;
+}
+
+.hero h1 .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.hero h1 .line-inner {
+  display: block;
+  transform: translateY(112%);
+  transition: transform 1.05s var(--ease-out);
+}
+
+.hero h1 .line:nth-child(2) .line-inner {
+  transition-delay: 90ms;
+}
+
+.hero h1.reveal.is-visible .line-inner {
+  transform: translateY(0);
+}
+
+/* buttons: tiny lift on hover */
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+/* plan preview ring: draw the progress arc */
+@keyframes lp-ring-draw {
+  from {
+    stroke-dashoffset: 189;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pp-ring .ring-progress {
+  stroke-dasharray: 79 189;
+  stroke-dashoffset: 189;
+  animation: lp-ring-draw 1.5s var(--ease-out) 0.35s forwards;
+}
+
+/* sample cards: mini progress bars grow when the card appears */
+@keyframes lp-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.sample-card.reveal .mini-row .bar i {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.sample-card.reveal.is-visible .mini-row .bar i {
+  animation: lp-bar-grow 0.9s var(--ease-out) both;
+}
+
+.sample-card.reveal.is-visible .mini-row:nth-child(2) .bar i {
+  animation-delay: 0.08s;
+}
+
+.sample-card.reveal.is-visible .mini-row:nth-child(3) .bar i {
+  animation-delay: 0.16s;
+}
+
+.sample-card.reveal.is-visible .mini-row:nth-child(4) .bar i {
+  animation-delay: 0.24s;
+}
+
+/* staggered sections: steps and why-list items */
+.steps-row .step:nth-child(2) {
+  --reveal-delay: 80ms;
+}
+
+.steps-row .step:nth-child(3) {
+  --reveal-delay: 160ms;
+}
+
+.steps-row .step:nth-child(4) {
+  --reveal-delay: 240ms;
+}
+
+.why-list .why-item:nth-child(2) {
+  --reveal-delay: 70ms;
+}
+
+.why-list .why-item:nth-child(3) {
+  --reveal-delay: 140ms;
+}
+
+/* route transition */
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* streamed phases: each new phase slides in */
+.phase-enter-active {
+  transition:
+    opacity 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out);
+}
+
+.phase-enter-from {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pp-ring .ring-progress {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .sample-card.reveal .mini-row .bar i,
+  .sample-card.reveal.is-visible .mini-row .bar i {
+    animation: none;
+    transform: none;
+  }
+
+  .page-enter-active,
+  .page-leave-active,
+  .phase-enter-active {
+    transition: none;
+  }
+
+  .hero h1 .line-inner {
+    transform: none;
+    transition: none;
+  }
+}

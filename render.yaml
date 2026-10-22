@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: learnpath
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://api.deepseek.com
+      - key: LLM_MODEL
+        value: deepseek-chat
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://learnpath.onrender.com
+      - key: GUEST_DAILY_LIMIT
+        value: "5"
+      - key: USER_DAILY_TOKEN_LIMIT
+        value: "50000"
+      - key: AGENT_MAX_ROUNDS
+        value: "3"
+      - key: AGENT_DAILY_LIMIT
+        value: "20"

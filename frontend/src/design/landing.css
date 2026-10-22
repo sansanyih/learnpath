@@ -1,0 +1,217 @@
+/* ============================================================
+   Landing layout: one section per screen.
+   Scroll still flows naturally; proximity snap keeps the rhythm.
+   ============================================================ */
+
+html.snap-landing {
+  scroll-snap-type: y proximity;
+}
+
+.landing .screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+/* In a column flex container, auto margins shrink items to content width.
+   Force full width so nav / hero / sections share the same canvas. */
+.landing .screen > * {
+  width: 100%;
+}
+
+/* first screen: nav + hero fill exactly one viewport */
+.landing .hero-screen {
+  justify-content: flex-start;
+}
+
+.landing .hero-screen .hero {
+  flex: 1;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+/* samples: one screen of its own */
+.landing .samples.screen {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* ============================================================
+   Scale: wider canvas + larger type on big screens.
+   ============================================================ */
+
+.landing {
+  --maxw: min(1440px, 92vw);
+}
+
+.landing .nav {
+  height: 84px;
+}
+
+.landing .nav-links a {
+  font-size: 15px;
+}
+
+.landing .hero {
+  gap: 64px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+}
+
+.landing .hero h1 {
+  font-size: clamp(56px, 4.2vw, 76px);
+}
+
+.landing .hero .lead {
+  font-size: 18px;
+}
+
+.landing .plan-preview {
+  padding: 26px;
+}
+
+.landing .pp-title {
+  font-size: 18px;
+}
+
+.landing .pp-sub {
+  font-size: 13px;
+}
+
+.landing .pp-week {
+  height: 38px;
+  font-size: 11px;
+}
+
+.landing .pp-row {
+  font-size: 13.5px;
+}
+
+.landing .pp-today {
+  font-size: 13.5px;
+  padding: 14px 16px;
+}
+
+.landing .samples-head h2 {
+  font-size: clamp(30px, 2.2vw, 38px);
+}
+
+.landing .sample-card.is-featured h3 {
+  font-size: 24px;
+}
+
+.landing .sample-card.is-featured p {
+  font-size: 14.5px;
+}
+
+.landing .sample-card.tint-amber h3,
+.landing .sample-card.tint-green h3 {
+  font-size: 17px;
+}
+
+.landing .sample-card.tint-amber p,
+.landing .sample-card.tint-green p {
+  font-size: 13px;
+}
+
+.landing .mini-row {
+  font-size: 13px;
+}
+
+.landing .sample-card.is-featured .mini-row {
+  grid-template-columns: 24px minmax(0, 1fr) 110px 42px;
+}
+
+.landing .why {
+  gap: clamp(48px, 5vw, 90px);
+}
+
+.landing .why h2 {
+  font-size: clamp(34px, 2.6vw, 42px);
+}
+
+.landing .why-left p {
+  font-size: 15px;
+}
+
+.landing .why-item h3 {
+  font-size: 17px;
+}
+
+.landing .why-item p {
+  font-size: 14px;
+}
+
+.landing .why-item {
+  grid-template-columns: 52px minmax(0, 1fr);
+  padding: 24px 0;
+}
+
+.landing .steps-head h2 {
+  font-size: clamp(30px, 2.4vw, 38px);
+}
+
+.landing .step h4 {
+  font-size: 17px;
+}
+
+.landing .step p {
+  font-size: 14px;
+}
+
+.landing .final-cta h2 {
+  font-size: clamp(56px, 4.4vw, 76px);
+}
+
+.landing .final-cta p {
+  font-size: 15.5px;
+}
+
+.landing .btn-pill {
+  height: 52px;
+  padding: 0 30px;
+  font-size: 15px;
+}
+
+/* why + steps share one screen */
+.landing .combined-screen {
+  justify-content: center;
+  gap: 56px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.landing .combined-screen .why,
+.landing .combined-screen .steps {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* final screen: CTA centered, footer pinned to the bottom */
+.landing .end-screen {
+  justify-content: space-between;
+  padding-top: 72px;
+}
+
+.landing .end-screen .final-cta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.landing .end-screen .site-footer {
+  width: min(calc(100% - 64px), var(--maxw));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.snap-landing {
+    scroll-snap-type: none;
+  }
+}

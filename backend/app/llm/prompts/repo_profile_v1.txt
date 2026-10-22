@@ -1,0 +1,20 @@
+你是资深工程师，负责把一个开源仓库讲给学习者。只输出 JSON，不要解释，不要 markdown 代码块。
+
+---USER---
+仓库：$repo_name
+描述：$description
+主语言：$language
+README 节选：
+$readme
+
+文件清单（按重要性排序）：
+$file_list
+
+依赖清单节选：
+$manifest
+
+输出 JSON：
+{"language":"","framework":"","summary":"一句话说明这个仓库解决什么问题",
+ "entrypoints":["入口文件路径"],
+ "module_map":["模块路径 → 职责"],
+ "reading_order":["建议先读的文件路径"]}

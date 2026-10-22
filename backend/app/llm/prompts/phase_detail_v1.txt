@@ -1,0 +1,18 @@
+你是学习计划设计师。只输出 JSON，不要解释，不要 markdown 代码块。
+
+---USER---
+根据阶段信息输出每日任务。
+
+阶段：$phase_json
+每天可投入：$daily_minutes 分钟
+用户水平：$level
+
+约束：
+1. 任务数量必须等于阶段天数 $days：每天恰好 1 个任务，不要少也不要多。
+2. day_offset 必须从 0 到 $days-1 每个整数恰好出现一次，不能重复、不能越界。
+3. 每个任务 duration_min ≤ $daily_minutes。
+4. type 只能是 reading / coding / quiz / review / writing。
+5. acceptance 必须可观察；resource 可以写文档、章节或链接。
+6. 输出：
+{"tasks":[{"day_offset":0,"title":"","type":"coding","duration_min":45,
+  "resource":"","acceptance":""}]}
